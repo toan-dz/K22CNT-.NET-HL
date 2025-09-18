@@ -1,0 +1,25 @@
+﻿@model List<DemoApp.Models.Book>
+
+    <h2>Danh sách sách</h2>
+    <table border="1" cellpadding="5">
+        <tr>
+            <th>Mã</th>
+            <th>Tên sách</th>
+            <th>Tác giả</th>
+            <th>Giá</th>
+            <th>Chức năng</th>
+        </tr>
+        @foreach (var book in Model)
+        {
+        <tr>
+            <td>@book.Id</td>
+            <td>@book.Title</td>
+            <td>@book.Author</td>
+            <td>@book.Price VNĐ</td>
+            <td>
+                <a href="/Book/Details/@book.Id">Chi tiết</a>
+            </td>
+        </tr>
+        }
+    </table>
+    <a href="/Book/Create">Thêm sách mới</a>
